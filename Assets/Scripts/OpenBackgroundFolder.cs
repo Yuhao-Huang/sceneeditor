@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-public class OpenFolderForGround : MonoBehaviour
+public class OpenBackgroundFolder : MonoBehaviour
 {
-    public Button button;
-    public GameObject parent;
-
-
+    public GameObject background;
 
     public void CreateSprites()
     {
+        Vector3 colliderCenter = background.transform.parent.GetComponent<BoxCollider>().bounds.center;
+
         string filePath = EditorUtility.OpenFilePanel("Select image", "", "jpg,png");
         if (string.IsNullOrEmpty(filePath))
         {
@@ -20,13 +20,9 @@ public class OpenFolderForGround : MonoBehaviour
         }
 
         Texture2D texture = LoadTexture(filePath);
-        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-        //AssetDatabase.CreateAsset(sprite, "Assets/Sprites/" + System.IO.Path.GetFileNameWithoutExtension(filePath) + ".asset");
-
-        GameObject prefab = new GameObject(System.IO.Path.GetFileNameWithoutExtension(filePath));
-        prefab.transform.SetParent(parent.transform);
-        prefab.AddComponent<SpriteRenderer>().sprite = sprite;
-        prefab.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 32);
+        background.GetComponent<SpriteRenderer>().sprite = sprite;
+        background.transform.position = colliderCenter;
 
         AssetDatabase.Refresh();
     }

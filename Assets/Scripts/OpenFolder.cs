@@ -23,7 +23,7 @@ public class OpenFolder : MonoBehaviour
         }
 
         Texture2D texture = LoadTexture(filePath);
-        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero,32);
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 32);
         //AssetDatabase.CreateAsset(sprite, "Assets/Sprites/" + System.IO.Path.GetFileNameWithoutExtension(filePath) + ".asset");
 
         GameObject prefab = new GameObject(System.IO.Path.GetFileNameWithoutExtension(filePath));
