@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ public class OpenFolder : MonoBehaviour
         button.onClick.AddListener(CreateSprites);
     }
 
-    void CreateSprites()
+    public void CreateSprites()
     {
         string filePath = EditorUtility.OpenFilePanel("Select image", "", "jpg,png");
         if (string.IsNullOrEmpty(filePath))

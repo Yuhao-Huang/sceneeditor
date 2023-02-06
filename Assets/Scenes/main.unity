@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834e4aa642c6ee24db399a0fdb527cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 0}
+  inputField: {fileID: 1095976872}
 --- !u!114 &1095976872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,7 +1415,6 @@ GameObject:
   - component: {fileID: 1484302552}
   - component: {fileID: 1484302551}
   - component: {fileID: 1484302550}
-  - component: {fileID: 1484302553}
   m_Layer: 5
   m_Name: UplordButton
   m_TagString: Untagged
@@ -1526,20 +1525,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484302548}
   m_CullTransparentMesh: 1
---- !u!114 &1484302553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484302548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09371401eb88ba042b5310a26f2f24c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1484302550}
-  parent: {fileID: 147123292}
 --- !u!1 &1726681722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,9 +1613,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726681722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06a80bd982eea444b89b21bb9a325c64, type: 3}
+  m_Script: {fileID: 11500000, guid: 09371401eb88ba042b5310a26f2f24c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1484302550}
+  parent: {fileID: 147123292}
 --- !u!1 &1840015712
 GameObject:
   m_ObjectHideFlags: 0
